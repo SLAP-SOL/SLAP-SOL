@@ -7,206 +7,95 @@
   <meta name="description" content="SLAPS — origin story & gallery" />
   <style>
     :root{
-      /* lighter theme */
-      --bg-top: #ffffff;      /* white */
-      --bg-bottom: #e6e6e6;   /* light grey */
-      --card: rgba(0,0,0,0.04);
-      --muted: #333842;
+      --bg-top: #ffffff;
+      --bg-bottom: #e6e6e6;
       --text: #0f1720;
+      --muted: #333842;
       --max-width: 1100px;
-      --gap: 28px;
+      --base-font-size: 20px;
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      --base-font-size: 20px; /* increased for legibility */
     }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg-top),var(--bg-bottom));color:var(--text);font-size:var(--base-font-size);line-height:1.7}
+    main{max-width:var(--max-width);margin:40px auto;padding:30px;display:grid;gap:32px}
+    header{display:grid;justify-items:center;gap:16px}
+    .logo-wrap img{width:500px;height:auto;object-fit:contain;display:block}
 
-    * { box-sizing: border-box; }
-    html,body { height:100%; margin:0; background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom)); color:var(--text); -webkit-font-smoothing:antialiased; }
-    body { font-size: var(--base-font-size); line-height:1.6; }
+    h2{font-size:2.4rem;margin:0 0 12px;text-transform:uppercase;letter-spacing:1px}
+    p{font-size:1.3rem;color:var(--muted)}
 
-    main {
-      max-width: var(--max-width);
-      margin: 36px auto;
-      padding: 28px;
-      display: grid;
-      gap: var(--gap);
-    }
+    nav.socials{display:flex;gap:20px;justify-content:center;margin-top:12px}
+    nav.socials a{font-size:1.3rem;text-decoration:none;border-bottom:2px solid transparent}
+    nav.socials a:hover{border-bottom:2px solid var(--text)}
 
-    /* Header / logo */
-    header {
-      display: grid;
-      justify-items: center;
-      gap: 10px;
-      padding-top: 6px;
-      padding-bottom: 6px;
-    }
+    /* centered block + right alignment for text */
+    .section.purchase-section{text-align:right;margin-inline:auto;width:80%}
+    .purchase-section h2{text-align:center;font-size:2.6rem;margin-bottom:10px}
+    .purchase-section p{font-size:1.5rem;line-height:1.9}
 
-    /* logo now large and without surrounding box; it will use transparent background */
-    .logo {
-      width: 520px;       /* 2x larger than earlier ~260px */
-      max-width: 92%;
-      height: auto;
-      display: block;
-    }
-
-    /* socials */
-    nav.socials {
-      display:flex;
-      gap:14px;
-      align-items:center;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-    nav.socials a {
-      display:inline-block;
-      padding:10px 14px;
-      border-radius:999px;
-      background: rgba(0,0,0,0.06);
-      color: var(--text);
-      text-decoration:none;
-      font-size: 1.0rem;
-    }
-
-    /* section cards */
-    section.card {
-      background: var(--card);
-      padding: 22px;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(15,23,32,0.04);
-    }
-
-    /* typographic sizes increased */
-    h1, h2 {
-      margin:0 0 12px 0;
-      font-weight: 700;
-      color: var(--text);
-    }
-    h1 { font-size: 2.1rem; }   /* page title if used */
-    h2 { font-size: 1.6rem; }
-
-    p {
-      margin:0;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    /* gallery */
-    .gallery {
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top:12px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 1px solid rgba(0,0,0,0.06);
-      background: #f3f3f3;
-    }
-
-    footer {
-      display:flex;
-      justify-content:center;
-      padding:14px;
-      color:var(--muted);
-      font-size: 0.95rem;
-    }
-
-    /* responsive tweaks */
-    @media (max-width: 860px) {
-      .logo { width: 420px; }
-      .gallery img { height: 180px; }
-    }
-    @media (max-width: 520px) {
-      :root { --base-font-size: 18px; }
-      .logo { width: 280px; }
-      .gallery img { height: 140px; }
-      h1 { font-size: 1.6rem; }
-      h2 { font-size: 1.25rem; }
-    }
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+    .gallery img{width:100%;border-radius:12px;background:#111;padding:10px}
   </style>
 </head>
+
 <body>
-  <main>
-    <header>
-      <!-- Logo: uses your exact filename. If the file is in a subfolder, change the src accordingly -->
-      <img id="mainLogo" class="logo" src="Untitled_Artworkslaplogo.png" alt="SLAPS Logo">
+<main>
 
-      <nav class="socials" aria-label="social links">
-        <a href="#" id="linkMemedepot" target="_blank" rel="noopener noreferrer">MemeDepot</a>
-        <a href="https://twitter.com" id="linkTwitter" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a href="#" id="linkDiscord" target="_blank" rel="noopener noreferrer">Discord</a>
-      </nav>
-    </header>
+<header>
+  <div class="logo-wrap">
+    <img src="Untitled_Artworkslaplogo.png"
+         alt="SLAPS Logo"
+         onerror="this.style.display='none'; console.warn('Logo not found: Untitled_Artworkslaplogo.png');">
+  </div>
 
-    <section class="card" id="storyBlock">
-      <!-- Title changed as requested -->
-      <h2>ORIGIN OF THE SLAP!</h2>
+  <nav class="socials">
+    <a href="#">MemeDepot</a>
+    <a href="#">Twitter</a>
+    <a href="#">Discord</a>
+  </nav>
+</header>
 
-      <!-- Your full text inserted verbatim, formatted for readability -->
-      <p>
-<strong>The slaps dichotomy</strong><br><br>
-Slaps is a metaphor of life. Sometimes life slaps, and sometimes life slaps you.<br><br>
-The stoic in all of us is inherently aware that life is a series of ups and downs, undulating between euphoria and hard times. Slaps represents both, embracing the times when you’re on top of your game, and equally when we’ve been dealt a dose of reality. Slaps coin is the currency of character, how you deal with life’s slaps defines you and your story. When you slap, be proud but not complacent, if life’s slapped you, get back up and go again. The bigger the slap the more epic the comeback. No matter how many times we get slapped down, we are relentless in our pursuit of being better.<br><br>
-In all of this, it’s essential we don’t forget.. sometimes you just have to slap some ass. Sometimes life be that simple.
-      </p>
-    </section>
+<!-- ORIGIN OF THE SLAP -->
+<section>
+  <h2>ORIGIN OF THE SLAP!</h2>
+  <p>
+    <strong>The slaps dichotomy</strong><br><br>
+    Slaps is a metaphor of life. Sometimes life slaps, and sometimes life slaps you.
+    The stoic in all of us is inherently aware that life is a series of ups and downs,
+    undulating between euphoria and hard times. Slaps represents both, embracing
+    the times when you’re on top of your game, and equally when we’ve been dealt a
+    dose of reality. Slaps coin is the currency of character — how you deal with
+    life’s slaps defines you and your story.<br><br>
+    When you slap, be proud but not complacent. If life slaps you, get back up and go again.
+    The bigger the slap, the more epic the comeback. No matter how many times we get slapped down,
+    we are relentless in our pursuit of being better.<br><br>
+    In all of this, it’s essential we don’t forget… sometimes you just have to slap some ass.
+    Sometimes life be that simple.
+  </p>
+</section>
 
-    <section class="card" id="purchase">
-      <h2>Purchase & Contract Info</h2>
-      <p><strong>Official purchase:</strong> <a id="buyLink" href="#" target="_blank">Buy (placeholder)</a></p>
-      <p style="margin-top:8px"><strong>Contract:</strong> <code id="contractAddr">0x0000000000000000000000000000000000000000</code></p>
-    </section>
+<!-- PURCHASE INFO — centered block -->
+<div class="section purchase-section">
+    <h2>Purchase & Contract Info</h2>
+    <p>
+        <strong>Official Purchase:</strong><br>
+        <a href="#" target="_blank">Buy SLAPS</a><br><br>
 
-    <section class="card" id="galleryBlock">
-      <h2>Meme Gallery</h2>
-      <div class="gallery" id="gallery">
-        <!-- Replace these with your uploaded gallery images or remove cards you don't need -->
-        <img src="assets/gallery/1.jpg" alt="Meme 1" onerror="this.style.opacity=0.45">
-        <img src="assets/gallery/2.jpg" alt="Meme 2" onerror="this.style.opacity=0.45">
-        <img src="assets/gallery/3.jpg" alt="Meme 3" onerror="this.style.opacity=0.45">
-        <img src="assets/gallery/4.jpg" alt="Meme 4" onerror="this.style.opacity=0.45">
-      </div>
-      <p style="margin-top:12px;color:var(--muted)">Tip: use compressed JPG or WebP images &lt;200KB for faster loads.</p>
-    </section>
+        <strong>Contract:</strong><br>
+        0x0000000000000000000000000000000000000000
+    </p>
+</div>
 
-    <footer>
-      © <span id="year"></span> SLAPS
-    </footer>
-  </main>
+<!-- GALLERY -->
+<section>
+  <h2 style="text-align:center;">MEME GALLERY</h2>
+  <div class="gallery">
+    <img src="placeholder1.png" alt="Meme 1">
+    <img src="placeholder2.png" alt="Meme 2">
+    <img src="placeholder3.png" alt="Meme 3">
+  </div>
+</section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Logo fallback + debug
-    (function(){
-      const logo = document.getElementById('mainLogo');
-
-      logo.addEventListener('error', function onErr(){
-        console.warn('Logo failed to load from:', logo.src);
-        // try alternate path (assets/)
-        if(!logo.dataset.triedAssets){
-          logo.dataset.triedAssets = '1';
-          logo.src = 'assets/Untitled_Artworkslaplogo.png';
-          return;
-        }
-        // final inline placeholder
-        logo.removeEventListener('error', onErr);
-        logo.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(
-          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="240">' +
-          '<rect width="100%" height="100%" fill="#ffffff"/>' +
-          '<text x="50%" y="50%" fill="#333" font-family="Arial" font-size="20" text-anchor="middle" dominant-baseline="middle">Logo not found</text>' +
-          '</svg>'
-        );
-        console.error('Logo not found. Put Untitled_Artworkslaplogo.png at repo root or at assets/Untitled_Artworkslaplogo.png');
-      });
-
-      logo.addEventListener('load', function(){
-        console.log('Logo loaded from:', logo.src);
-        // if the image is SVG or transparent PNG it will sit cleanly on the light gradient background
-      });
-    })();
-  </script>
+</main>
 </body>
 </html>
