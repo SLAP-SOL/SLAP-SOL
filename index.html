@@ -3,42 +3,135 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SLAPS — The Slaps Dichotomy</title>
-  <meta name="description" content="SLAPS — short manifesto & gallery" />
+  <title>SLAPS — ORIGIN OF THE SLAP!</title>
+  <meta name="description" content="SLAPS — origin story & gallery" />
   <style>
     :root{
-      --bg1: #0b1116;
-      --bg2: #071018;
-      --card: rgba(255,255,255,0.03);
-      --muted: #9aa4b2;
-      --white: #eef2f7;
-      --max-width: 980px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      /* lighter theme */
+      --bg-top: #ffffff;      /* white */
+      --bg-bottom: #e6e6e6;   /* light grey */
+      --card: rgba(0,0,0,0.04);
+      --muted: #333842;
+      --text: #0f1720;
+      --max-width: 1100px;
+      --gap: 28px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --base-font-size: 20px; /* increased for legibility */
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--white);-webkit-font-smoothing:antialiased}
-    main{max-width:var(--max-width);margin:36px auto;padding:22px;display:grid;gap:28px}
-    header{display:grid;justify-items:center;gap:14px;padding:10px}
-    .logo-wrap{width:260px;height:260px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.15));display:grid;place-items:center;padding:18px;overflow:hidden}
-    .logo-wrap img{max-width:100%;max-height:100%;object-fit:contain;display:block}
-    nav.socials{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap}
-    nav.socials a{display:inline-block;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,0.03);text-decoration:none;color:var(--white);font-size:15px}
-    section.card{background:var(--card);padding:20px;border-radius:12px}
-    h1,h2{margin:0 0 10px}
-    p{margin:0;color:var(--muted);line-height:1.6}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:12px}
-    .gallery img{width:100%;height:140px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:#071423}
-    footer{display:flex;justify-content:center;padding:12px;color:var(--muted);font-size:14px}
-    @media (max-width:640px){.logo-wrap{width:160px;height:160px}.gallery img{height:120px}}
+
+    * { box-sizing: border-box; }
+    html,body { height:100%; margin:0; background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom)); color:var(--text); -webkit-font-smoothing:antialiased; }
+    body { font-size: var(--base-font-size); line-height:1.6; }
+
+    main {
+      max-width: var(--max-width);
+      margin: 36px auto;
+      padding: 28px;
+      display: grid;
+      gap: var(--gap);
+    }
+
+    /* Header / logo */
+    header {
+      display: grid;
+      justify-items: center;
+      gap: 10px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    /* logo now large and without surrounding box; it will use transparent background */
+    .logo {
+      width: 520px;       /* 2x larger than earlier ~260px */
+      max-width: 92%;
+      height: auto;
+      display: block;
+    }
+
+    /* socials */
+    nav.socials {
+      display:flex;
+      gap:14px;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    nav.socials a {
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:999px;
+      background: rgba(0,0,0,0.06);
+      color: var(--text);
+      text-decoration:none;
+      font-size: 1.0rem;
+    }
+
+    /* section cards */
+    section.card {
+      background: var(--card);
+      padding: 22px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(15,23,32,0.04);
+    }
+
+    /* typographic sizes increased */
+    h1, h2 {
+      margin:0 0 12px 0;
+      font-weight: 700;
+      color: var(--text);
+    }
+    h1 { font-size: 2.1rem; }   /* page title if used */
+    h2 { font-size: 1.6rem; }
+
+    p {
+      margin:0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    /* gallery */
+    .gallery {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top:12px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.06);
+      background: #f3f3f3;
+    }
+
+    footer {
+      display:flex;
+      justify-content:center;
+      padding:14px;
+      color:var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* responsive tweaks */
+    @media (max-width: 860px) {
+      .logo { width: 420px; }
+      .gallery img { height: 180px; }
+    }
+    @media (max-width: 520px) {
+      :root { --base-font-size: 18px; }
+      .logo { width: 280px; }
+      .gallery img { height: 140px; }
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.25rem; }
+    }
   </style>
 </head>
 <body>
   <main>
     <header>
-      <!-- logo: uses your exact filename. If your file is in a subfolder, update the src accordingly -->
-      <div class="logo-wrap" title="Main Logo">
-        <img id="mainLogo" src="Untitled_Artworkslaplogo.png" alt="SLAPS Logo">
-      </div>
+      <!-- Logo: uses your exact filename. If the file is in a subfolder, change the src accordingly -->
+      <img id="mainLogo" class="logo" src="Untitled_Artworkslaplogo.png" alt="SLAPS Logo">
 
       <nav class="socials" aria-label="social links">
         <a href="#" id="linkMemedepot" target="_blank" rel="noopener noreferrer">MemeDepot</a>
@@ -48,7 +141,10 @@
     </header>
 
     <section class="card" id="storyBlock">
-      <h2>The Meme Story</h2>
+      <!-- Title changed as requested -->
+      <h2>ORIGIN OF THE SLAP!</h2>
+
+      <!-- Your full text inserted verbatim, formatted for readability -->
       <p>
 <strong>The slaps dichotomy</strong><br><br>
 Slaps is a metaphor of life. Sometimes life slaps, and sometimes life slaps you.<br><br>
@@ -66,11 +162,11 @@ In all of this, it’s essential we don’t forget.. sometimes you just have to 
     <section class="card" id="galleryBlock">
       <h2>Meme Gallery</h2>
       <div class="gallery" id="gallery">
-        <!-- replace these with real image paths you upload -->
-        <img src="assets/gallery/1.jpg" alt="Meme 1" onerror="this.style.opacity=0.25">
-        <img src="assets/gallery/2.jpg" alt="Meme 2" onerror="this.style.opacity=0.25">
-        <img src="assets/gallery/3.jpg" alt="Meme 3" onerror="this.style.opacity=0.25">
-        <img src="assets/gallery/4.jpg" alt="Meme 4" onerror="this.style.opacity=0.25">
+        <!-- Replace these with your uploaded gallery images or remove cards you don't need -->
+        <img src="assets/gallery/1.jpg" alt="Meme 1" onerror="this.style.opacity=0.45">
+        <img src="assets/gallery/2.jpg" alt="Meme 2" onerror="this.style.opacity=0.45">
+        <img src="assets/gallery/3.jpg" alt="Meme 3" onerror="this.style.opacity=0.45">
+        <img src="assets/gallery/4.jpg" alt="Meme 4" onerror="this.style.opacity=0.45">
       </div>
       <p style="margin-top:12px;color:var(--muted)">Tip: use compressed JPG or WebP images &lt;200KB for faster loads.</p>
     </section>
@@ -83,31 +179,33 @@ In all of this, it’s essential we don’t forget.. sometimes you just have to 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Image fallback and debug logging for the logo
+    // Logo fallback + debug
     (function(){
       const logo = document.getElementById('mainLogo');
 
-      // If logo fails to load, try alternative paths, then a data-URI placeholder
       logo.addEventListener('error', function onErr(){
         console.warn('Logo failed to load from:', logo.src);
-        // try alternate likely paths (assets folder)
+        // try alternate path (assets/)
         if(!logo.dataset.triedAssets){
           logo.dataset.triedAssets = '1';
           logo.src = 'assets/Untitled_Artworkslaplogo.png';
           return;
         }
-        // final fallback: generic inline placeholder SVG
+        // final inline placeholder
         logo.removeEventListener('error', onErr);
         logo.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(
-          '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300">' +
-          '<rect width="100%" height="100%" fill="#071423"/>' +
-          '<text x="50%" y="50%" fill="#cbd5e1" font-family="Arial" font-size="18" text-anchor="middle" dominant-baseline="middle">Logo not found</text>' +
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="240">' +
+          '<rect width="100%" height="100%" fill="#ffffff"/>' +
+          '<text x="50%" y="50%" fill="#333" font-family="Arial" font-size="20" text-anchor="middle" dominant-baseline="middle">Logo not found</text>' +
           '</svg>'
         );
-        console.error('Logo not found in repo root or assets/. Put the file Untitled_Artworkslaplogo.png at repo root or assets/Untitled_Artworkslaplogo.png');
+        console.error('Logo not found. Put Untitled_Artworkslaplogo.png at repo root or at assets/Untitled_Artworkslaplogo.png');
       });
-      // Also log successful load
-      logo.addEventListener('load', function(){ console.log('Logo loaded from:', logo.src); });
+
+      logo.addEventListener('load', function(){
+        console.log('Logo loaded from:', logo.src);
+        // if the image is SVG or transparent PNG it will sit cleanly on the light gradient background
+      });
     })();
   </script>
 </body>
