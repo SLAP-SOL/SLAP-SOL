@@ -65,12 +65,42 @@ main{max-width:var(--max-width);margin:36px auto;padding:28px;display:grid;gap:v
 .howto ol{margin:0;padding-left:18px;color:var(--text);font-size:1rem}
 .howto li{margin-bottom:10px}
 
-/* tokenomics card */
-.tokenomics-card{background:var(--card);border-radius:var(--radius-lg);padding:24px;border:1px solid rgba(12,18,24,0.03);box-shadow:0 12px 30px rgba(10,16,22,0.04);display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:center}
-@media (max-width:920px){ .tokenomics-card{grid-template-columns:1fr; } }
-.tokenomics-legend{display:flex;flex-direction:column;gap:8px;font-size:0.98rem}
-.legend-item{display:flex;gap:12px;align-items:center}
-.legend-swatch{width:14px;height:14px;border-radius:3px;display:inline-block}
+<!-- tokenomics card -->
+<section class="tokenomics-card" aria-labelledby="tokenomics-title">
+  <div>
+    <h2 id="tokenomics-title" style="margin-top:0;margin-bottom:10px;color:var(--accent);">
+      Tokenomics
+    </h2>
+    <p style="margin-top:0;margin-bottom:18px;color:var(--muted)">
+      Breakdown of supply and allocation.
+    </p>
+
+    <!-- GIF Chart -->
+    <div style="display:flex;gap:20px;align-items:center;justify-content:center;flex-wrap:wrap">
+      <img src="chart.gif" alt="SLAPS Tokenomics Chart" style="width:260px;height:auto;border-radius:14px;">
+      
+      <div class="tokenomics-legend">
+        <div class="legend-item"><span class="legend-swatch" style="background:#5b8df6"></span> MEGA THUNDER SLAP (Community + Giveaways + Rocket Fuel) — <strong>100M</strong></div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#ffc49e"></span> CEX “BIG ARM” KABOOM SLAP — <strong>40M</strong></div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#ffe89e"></span> KOL + Marketing “BITCH SLAPS” — <strong>30M</strong></div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#e4a1ff"></span> SLAP TEAM — <strong>20M</strong></div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#9effc9"></span> LP — <strong>10M</strong></div>
+      </div>
+    </div>
+
+    <p style="margin-top:16px;color:var(--muted)">
+      Total Supply: <strong>1,000,000,000 SLAPS</strong>  
+      <br>✅ <strong>800M</strong> locked automatically on Pump.fun at launch.
+    </p>
+  </div>
+
+  <!-- token summary badges on right side -->
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div style="background:#fbfbff;padding:14px;border-radius:12px;border:1px solid rgba(12,18,24,0.03)"><strong>Tax:</strong> 0%</div>
+    <div style="background:#fbfbff;padding:14px;border-radius:12px;border:1px solid rgba(12,18,24,0.03)"><strong>Renounced:</strong> No</div>
+    <div style="background:#fbfbff;padding:14px;border-radius:12px;border:1px solid rgba(12,18,24,0.03)"><strong>LP Locked:</strong> At launch</div>
+  </div>
+</section>
 
 /* roadmap */
 .roadmap-card{background:var(--card);border-radius:var(--radius-lg);padding:24px;border:1px solid rgba(12,18,24,0.03);box-shadow:0 12px 30px rgba(10,16,22,0.04)}
@@ -349,3 +379,4 @@ document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
+
