@@ -7,35 +7,35 @@
 
 <style>
     :root {
-        --bg-top: #ffffff;
-        --bg-bottom: #e5e5e5;
         --accent: #ff4a4a;
-        --card-bg: rgba(255,255,255,0.75);
-        --radius: 14px;
+        --bg-top: #ffffff;
+        --bg-bottom: #dcdcdc;
+        --card: rgba(255,255,255,0.75);
+        --radius: 18px;
+        --shadow: 0 10px 30px rgba(0,0,0,0.12);
     }
 
-    html, body {
+    body {
         margin: 0;
         font-family: "Inter", sans-serif;
         background: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+        text-align: center;
         color: #111;
         font-size: 20px;
-        text-align: center;
         scroll-behavior: smooth;
     }
 
     main {
-        width: 90%;
-        max-width: 900px;
-        margin: 0 auto;
-        padding-bottom: 60px;
+        max-width: 1050px;
+        margin: auto;
+        padding: 40px 25px;
     }
 
-    /* MAIN LOGO */
+    /* LOGO */
     #mainLogo {
-        width: 380px;
+        width: 400px;
         max-width: 90%;
-        margin: 70px auto 10px;
+        margin: 60px auto 20px;
         display: block;
     }
 
@@ -43,157 +43,216 @@
     .socials {
         display: flex;
         justify-content: center;
-        gap: 26px;
-        margin: 25px 0 60px;
+        gap: 30px;
+        margin: 15px 0 70px;
     }
-
-    .socials a img {
-        width: 55px;
-        height: 55px;
+    .socials img {
+        width: 60px;
+        height: 60px;
         transition: opacity .2s;
     }
+    .socials img:hover { opacity: .6; }
 
-    .socials a:hover img {
-        opacity: .7;
-    }
-
-    /* STYLED CARDS */
-    .ui-card {
-        background: var(--card-bg);
-        padding: 28px;
+    /* CARDS */
+    .card {
+        background: var(--card);
+        padding: 30px;
         border-radius: var(--radius);
-        box-shadow: 0 8px 22px rgba(0,0,0,0.09);
-        margin-bottom: 40px;
+        box-shadow: var(--shadow);
+        margin-bottom: 50px;
         text-align: left;
     }
 
     h2 {
-        font-size: 32px;
-        margin-top: 0;
         text-align: center;
+        font-size: 36px;
+        margin-top: 0;
+        color: var(--accent);
     }
 
-    /* TOKENOMICS SECTION */
-    .tokenomics-content {
+    /* LAYOUT — TOKENOMICS + BUY side-by-side */
+    .row {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 22px;
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .half {
+        flex: 1;
+        min-width: 340px;
     }
 
-    .token-list {
-        font-size: 22px;
-        line-height: 1.5;
-    }
-
-    .token-item {
-        margin-bottom: 14px;
-    }
-
-    /* BUY SECTION */
-    .buy-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 14px;
-    }
-
+    /* CONTRACT BOX */
     #addrBox {
-        background: #f7f7f7;
-        padding: 14px;
+        background: #efefef;
+        padding: 15px;
         border-radius: var(--radius);
-        width: 100%;
         font-size: 20px;
         text-align: center;
-        overflow-wrap: break-word;
+        overflow-wrap: anywhere;
     }
-
     .copy-btn {
-        cursor: pointer;
-        padding: 8px 18px;
-        border-radius: var(--radius);
         border: none;
         background: var(--accent);
         color: white;
+        padding: 10px 20px;
+        border-radius: var(--radius);
+        cursor: pointer;
         font-size: 18px;
+    }
+
+    /* FAQ */
+    .faq-item {
+        margin-bottom: 18px;
+    }
+    .faq-q {
+        cursor: pointer;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: var(--radius);
+        background: rgba(0,0,0,0.08);
+        display: flex;
+        justify-content: space-between;
+    }
+    .faq-a {
+        display: none;
+        padding: 14px;
+        border-left: 4px solid var(--accent);
+    }
+
+    /* GALLERY */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+        gap: 12px;
+    }
+    .gallery img {
+        width: 100%;
+        border-radius: var(--radius);
     }
 
     footer {
         margin-top: 90px;
-        padding: 25px;
-        opacity: 0.7;
+        opacity: .7;
+        padding-bottom: 30px;
     }
 </style>
 </head>
-
 <body>
 <main>
 
-<!-- █████ LOGO -->
+<!-- █████  MAIN LOGO  -->
 <img id="mainLogo" src="Untitled_Artworkslaplogo.png" alt="SLAPS Logo">
 
-<!-- █████ SOCIALS -->
+<!-- █████ SOCIAL ICONS -->
 <div class="socials">
     <a href="https://memedepot.com" target="_blank"><img src="assets/memedepot.png" alt="MemeDepot"></a>
     <a href="https://twitter.com" target="_blank"><img src="assets/twitter.png" alt="Twitter"></a>
-    <a href="https://discord.gg" target="_blank"><img src="assets/discord.png" alt="Discord"></a>
+    <a href="https://discord.com" target="_blank"><img src="assets/discord.png" alt="Discord"></a>
 </div>
 
 <!-- █████ ORIGIN SECTION -->
-<section class="ui-card">
+<section class="card">
     <h2>ORIGIN OF THE SLAP!</h2>
     <p>
         The SLAPS dichotomy — sometimes you slap life, sometimes life slaps you.
         SLAPS is the currency of character, reflecting how we handle success and setbacks.
         If you're on top, don't get complacent. If life knocks you down, get up and slap back harder.
-        Sometimes the comeback becomes legendary.
-        And sometimes… life really is as simple as slapping ass.
+        The bigger the slap, the more epic the comeback.  
+        And sometimes… life is as simple as slapping ass.
     </p>
 </section>
 
-<!-- █████ TOKENOMICS (GIF INCLUDED) -->
-<section class="ui-card">
-    <h2>TOKENOMICS</h2>
+<!-- █████ TOKENOMICS + BUY (SIDE BY SIDE) -->
+<div class="row">
 
-    <div class="tokenomics-content">
-        <!-- ✅ YOUR GIF — uppercase GIF -->
-        <img src="chart.GIF" alt="Token Distribution" style="max-width:350px; border-radius:16px;">
+    <!-- LEFT — TOKENOMICS -->
+    <section class="card half">
+        <h2>TOKENOMICS</h2>
+        <img src="chart.GIF" alt="Token Distribution" style="max-width:340px;display:block;margin:auto;border-radius:12px;">
 
-        <!-- Token list -->
-        <div class="token-list">
-            <div class="token-item"><b>MEGA THUNDER SLAP</b> — 100M (Community boosts + giveaways)</div>
-            <div class="token-item"><b>BIG ARM CEX KABOOM SLAP</b> — 40M (CEX listings / Liquidity)</div>
-            <div class="token-item"><b>KOL + MARKETING — BITCH SLAPS</b> — 30M</div>
-            <div class="token-item"><b>SLAP TEAM</b> — 20M</div>
-            <div class="token-item"><b>LP</b> — 10M</div>
-            <div class="token-item"><b>→ Remaining 800M locked on launch.</b></div>
-        </div>
+        <p><b>MEGA THUNDER SLAP</b> — 100M (Community boosts + giveaways)</p>
+        <p><b>BIG ARM CEX KABOOM SLAP</b> — 40M (CEX + liquidity)</p>
+        <p><b>KOL + MARKETING (BITCH SLAPS)</b> — 30M</p>
+        <p><b>SLAP TEAM</b> — 20M</p>
+        <p><b>LP</b> — 10M</p>
+        <p><b>→ Remaining 800M locked on launch.</b></p>
+    </section>
+
+    <!-- RIGHT — BUY BOX -->
+    <section class="card half">
+        <h2>GET YOUR TOKENS</h2>
+        <div id="addrBox">CONTRACT NOT RELEASED YET</div>
+        <button id="copyBtn" class="copy-btn">Copy</button>
+    </section>
+
+</div>
+
+<!-- █████ ROADMAP -->
+<section class="card">
+    <h2>ROADMAP</h2>
+    <p><b>Phase 1 — Launch:</b> SLAPS unleashed, liquidity live.</p>
+    <p><b>Phase 2 — Community:</b> meme contests, viral storm.</p>
+    <p><b>Phase 3 — Ecosystem:</b> NFTs, utility experiments.</p>
+    <p><b>Phase 4 — Expansion:</b> Partnerships, CEX listings.</p>
+</section>
+
+<!-- █████ FAQ -->
+<section class="card">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+        <div class="faq-q">Where do I buy SLAPS? <span>+</span></div>
+        <div class="faq-a">Use the purchase box above once the contract is live.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">Is the supply locked? <span>+</span></div>
+        <div class="faq-a">800M is locked on launch automatically by the platform.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">Do you have a community? <span>+</span></div>
+        <div class="faq-a">Twitter + Discord — links above under the logo.</div>
     </div>
 </section>
 
-<!-- █████ PURCHASE SECTION -->
-<section class="ui-card">
-    <h2>GET YOUR TOKENS</h2>
-    <div class="buy-box">
-        <div id="addrBox">CONTRACT NOT RELEASED YET</div>
-        <button id="copyBtn" class="copy-btn">Copy</button>
+<!-- █████ MEME GALLERY -->
+<section class="card">
+    <h2>MEME GALLERY</h2>
+    <div class="gallery">
+        <img src="assets/gallery/1.jpg">
+        <img src="assets/gallery/2.jpg">
+        <img src="assets/gallery/3.jpg">
+        <img src="assets/gallery/4.jpg">
     </div>
 </section>
 
 <footer>© <span id="year"></span> SLAPS</footer>
+
 </main>
 
 <script>
-    // Copyright year
-    document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Copy button for contract address
-    document.getElementById("copyBtn").addEventListener("click", () => {
-        const txt = document.getElementById("addrBox").textContent;
-        navigator.clipboard.writeText(txt);
-        document.getElementById("copyBtn").textContent = "Copied!";
-        setTimeout(()=>{document.getElementById("copyBtn").textContent="Copy";}, 1500);
+// FAQ accordion
+document.querySelectorAll(".faq-q").forEach((q) => {
+    q.addEventListener("click", () => {
+        let ans = q.nextElementSibling;
+        let open = ans.style.display === "block";
+        document.querySelectorAll(".faq-a").forEach(a => a.style.display = "none");
+        document.querySelectorAll(".faq-q span").forEach(s => s.textContent = "+");
+        if(!open){
+            ans.style.display = "block";
+            q.querySelector("span").textContent = "-";
+        }
     });
+});
+
+// Copy button
+document.getElementById("copyBtn").onclick = () => {
+    const box = document.getElementById("addrBox");
+    navigator.clipboard.writeText(box.textContent);
+    document.getElementById("copyBtn").textContent = "Copied!";
+    setTimeout(() => document.getElementById("copyBtn").textContent = "Copy", 1500);
+};
 </script>
 
 </body>
