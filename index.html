@@ -42,9 +42,15 @@ main{max-width:var(--max-width);margin:36px auto;padding:28px;display:grid;gap:v
 .story-card h1{font-size:44px;margin:0 0 18px;letter-spacing:0.6px;color:var(--accent);text-align:center;font-weight:800}
 .story-card p{margin:0;color:var(--text);font-size:18px;line-height:1.85}
 
+/* tokenomics */
+.tokenomics-card{background:var(--card);border-radius:var(--radius-lg);padding:24px;border:1px solid rgba(12,18,24,0.03);box-shadow:0 12px 30px rgba(10,16,22,0.04)}
+.tokenomics-legend{display:flex;flex-direction:column;gap:8px;font-size:0.98rem}
+.legend-item{display:flex;gap:12px;align-items:center}
+.legend-swatch{width:14px;height:14px;border-radius:3px;display:inline-block}
+
 /* two-column area for CTA + How to Buy */
 .split { display:grid; grid-template-columns: 1fr 360px; gap:20px; align-items:start; }
-@media (max-width:920px){ .split { grid-template-columns: 1fr; } }
+@media (max-width:920px){ .split { grid-template-columns:1fr; } }
 
 /* buy card & CTA */
 .buy-wrap{display:flex;flex-direction:column;gap:18px;align-items:stretch}
@@ -57,44 +63,12 @@ main{max-width:var(--max-width);margin:36px auto;padding:28px;display:grid;gap:v
 .contract-inner{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .address-box{flex:1 1 60%;background:#fafbff;padding:14px 16px;border-radius:10px;border:1px solid rgba(12,18,24,0.03);font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,monospace;font-size:0.96rem;color:#091020;word-break:break-all}
 .copy-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;background:#fff;border:1px solid rgba(12,18,24,0.06);cursor:pointer;font-weight:600}
-.contract-note{font-size:0.95rem;color:var(--muted);text-align:center;margin-top:8px}
 
 /* how-to-buy card (small) */
 .howto{background:var(--card);border-radius:14px;padding:18px;border:1px solid rgba(12,18,24,0.04);box-shadow:0 10px 24px rgba(10,16,22,0.03)}
 .howto h3{margin:0 0 8px;font-size:1.1rem}
 .howto ol{margin:0;padding-left:18px;color:var(--text);font-size:1rem}
 .howto li{margin-bottom:10px}
-
-<!-- tokenomics card -->
-<section class="tokenomics-card" aria-labelledby="tokenomics-title">
-  <div>
-    <h2 id="tokenomics-title" style="margin-top:0;margin-bottom:10px;color:var(--accent);">
-      Tokenomics
-    </h2>
-    <p style="margin-top:0;margin-bottom:18px;color:var(--muted)">
-      Supply allocation and distribution breakdown.
-    </p>
-
-    <!-- GIF Chart -->
-    <div style="display:flex;gap:20px;align-items:center;justify-content:center;flex-wrap:wrap">
-      <img src="chart.gif" alt="SLAPS Tokenomics Chart" style="width:260px;height:auto;border-radius:14px;">
-      
-      <div class="tokenomics-legend">
-        <div class="legend-item"><span class="legend-swatch" style="background:#5b8df6"></span> MEGA THUNDER SLAP (Community + Giveaways + Rocket Fuel) — <strong>100M</strong></div>
-        <div class="legend-item"><span class="legend-swatch" style="background:#ffc49e"></span> CEX “BIG ARM” KABOOM SLAP — <strong>40M</strong></div>
-        <div class="legend-item"><span class="legend-swatch" style="background:#ffe89e"></span> KOL + Marketing “BITCH SLAPS” — <strong>30M</strong></div>
-        <div class="legend-item"><span class="legend-swatch" style="background:#e4a1ff"></span> SLAP TEAM — <strong>20M</strong></div>
-        <div class="legend-item"><span class="legend-swatch" style="background:#9effc9"></span> LP — <strong>10M</strong></div>
-      </div>
-    </div>
-
-    <p style="margin-top:16px;color:var(--muted);text-align:center;">
-      Total Supply: <strong>1,000,000,000 SLAPS</strong><br>
-      ✅ <strong>800,000,000 SLAPS</strong> locked automatically on Pump.fun at launch.
-    </p>
-  </div>
-</section>
-
 
 /* roadmap */
 .roadmap-card{background:var(--card);border-radius:var(--radius-lg);padding:24px;border:1px solid rgba(12,18,24,0.03);box-shadow:0 12px 30px rgba(10,16,22,0.04)}
@@ -118,194 +92,133 @@ main{max-width:var(--max-width);margin:36px auto;padding:28px;display:grid;gap:v
 
 /* footer */
 footer{display:flex;justify-content:center;padding:18px;color:var(--muted);font-size:0.95rem}
-
-/* responsive tweaks */
-@media (max-width:720px){
-  .logo{width:280px}
-  .story-card h1{font-size:32px}
-  .tokenomics-card{grid-template-columns:1fr}
-  .split{grid-template-columns:1fr}
-}
 </style>
 </head>
 <body>
 <main>
-  <!-- top social pills -->
-  <div class="top-socials" role="navigation" aria-label="social links">
-    <a class="pill" href="#" target="_blank" rel="noopener noreferrer">
-      <span class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#fff"/></svg></span>
-      Discord
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="opacity:.8"><path d="M14 3h7v7M21 3L10 14" stroke="#6b7280" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
 
-    <a class="pill" href="#" target="_blank" rel="noopener noreferrer">
-      <span class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#fff"/></svg></span>
-      MemeDepot
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="opacity:.8"><path d="M14 3h7v7M21 3L10 14" stroke="#6b7280" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
+<!-- SOCIALS -->
+<div class="top-socials">
+  <a class="pill" href="#" target="_blank">Discord</a>
+  <a class="pill" href="#" target="_blank">MemeDepot</a>
+  <a class="pill" href="#" target="_blank">Twitter</a>
+</div>
 
-    <a class="pill" href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-      <span class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53" stroke="#0A0C0E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      Twitter
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="opacity:.8"><path d="M14 3h7v7M21 3L10 14" stroke="#6b7280" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
+<!-- HERO LOGO -->
+<header class="hero">
+  <img id="mainLogo" class="logo" src="Untitled_Artworkslaplogo.png" alt="SLAPS Logo">
+</header>
+
+<!-- STORY -->
+<section class="story-card">
+  <h1>The slaps dichotomy</h1>
+  <p>
+    Slaps is a metaphor of life. Sometimes life slaps, and sometimes life slaps you.<br><br>
+    The stoic in all of us is inherently aware that life is a series of ups and downs, undulating between euphoria and hard times. Slaps represents both — embracing the times when you're on top of your game, and equally when you’ve been dealt a dose of reality.<br><br>
+    When you slap, be proud but not complacent; if life slaps you, get back up and go again. The bigger the slap, the more epic the comeback.<br><br>
+    In all of this, it's essential we don't forget… sometimes you just have to slap some ass. Sometimes life be that simple.
+  </p>
+</section>
+
+<!-- ✅ TOKENOMICS UPDATED -->
+<section class="tokenomics-card" aria-labelledby="tokenomics-title">
+  <h2 id="tokenomics-title" style="margin-top:0;margin-bottom:10px;color:var(--accent);">Tokenomics</h2>
+  <p style="margin-top:0;margin-bottom:18px;color:var(--muted)">Supply allocation and distribution breakdown.</p>
+
+  <div style="display:flex;gap:20px;align-items:center;justify-content:center;flex-wrap:wrap">
+    <img src="chart.gif" alt="SLAPS Tokenomics Chart" style="width:260px;height:auto;border-radius:14px;">
+
+    <div class="tokenomics-legend">
+      <div class="legend-item"><span class="legend-swatch" style="background:#5b8df6"></span> MEGA THUNDER SLAP (Community + Giveaways + Rocket Fuel) — <strong>100M</strong></div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#ffc49e"></span> CEX “BIG ARM” KABOOM SLAP — <strong>40M</strong></div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#ffe89e"></span> KOL + Marketing “BITCH SLAPS” — <strong>30M</strong></div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#e4a1ff"></span> SLAP TEAM — <strong>20M</strong></div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#9effc9"></span> LP — <strong>10M</strong></div>
+    </div>
   </div>
 
-  <!-- hero logo -->
-  <header class="hero" role="banner">
-    <img id="mainLogo" class="logo" src="Untitled_Artworkslaplogo.png" alt="SLAPS Logo">
-  </header>
+  <p style="margin-top:16px;color:var(--muted);text-align:center;">
+    Total Supply: <strong>1,000,000,000 SLAPS</strong><br>
+    ✅ <strong>800,000,000 SLAPS</strong> locked automatically on Pump.fun at launch.
+  </p>
+</section>
 
-  <!-- story card -->
-  <section class="story-card" aria-labelledby="story-title">
-    <h1 id="story-title">The slaps dichotomy</h1>
-    <p>
-      Slaps is a metaphor of life. Sometimes life slaps, and sometimes life slaps you.<br><br>
-      The stoic in all of us is inherently aware that life is a series of ups and downs, undulating between euphoria and hard times. Slaps represents both, embracing the times when you're on top of your game, and equally when we've been dealt a dose of reality. Slaps coin is the currency of character, how you deal with life's slaps defines you and your story. When you slap, be proud but not complacent; if life's slapped you, get back up and go again. The bigger the slap the more epic the comeback. No matter how many times we get slapped down, we are relentless in our pursuit of being better.<br><br>
-      In all of this, it's essential we don't forget… sometimes you just have to slap some ass. Sometimes life be that simple.
-    </p>
-  </section>
+<!-- BUY + CONTRACT + HOW TO BUY -->
+<section class="split">
+  <div class="buy-wrap">
+    <h2 style="margin:0;color:var(--accent)">Get Your Tokens</h2>
+    <p style="color:var(--muted);margin:0 0 8px;">Purchase tokens through our official links.</p>
 
-  <!-- tokenomics card -->
-  <section class="tokenomics-card" aria-labelledby="tokenomics-title">
-    <div>
-      <h2 id="tokenomics-title" style="margin-top:0;margin-bottom:10px;color:var(--accent);">Tokenomics</h2>
-      <p style="margin-top:0;margin-bottom:18px;color:var(--muted)">Quick overview of supply and distribution.</p>
+    <a id="buyLink" class="cta" href="#" target="_blank">Official Purchase Link</a>
 
-      <div style="display:flex;gap:18px;align-items:center">
-        <!-- Static chart image (you will upload chart.png to repo root or same folder) -->
-        <img src="chart.png" alt="Tokenomics chart" style="width:160px;height:160px;border-radius:8px;border:1px solid rgba(12,18,24,0.03);object-fit:cover">
-        <div class="tokenomics-legend">
-          <div class="legend-item"><span class="legend-swatch" style="background:#5b8df6"></span><strong>MEGA THUNDER SLAP</strong> — 100,000,000 (10%)<br><small style="color:var(--muted)">Community promotions, giveaways & rocket fuel</small></div>
-          <div class="legend-item"><span class="legend-swatch" style="background:#ffc49e"></span><strong>CEX “BIG ARM” KABOOM SLAP</strong> — 40,000,000 (4%)</div>
-          <div class="legend-item"><span class="legend-swatch" style="background:#ffe89e"></span><strong>KOL + MARKETING “BITCH SLAPS”</strong> — 30,000,000 (3%)</div>
-          <div class="legend-item"><span class="legend-swatch" style="background:#e4a1ff"></span><strong>SLAP TEAM</strong> — 20,000,000 (2%)</div>
-          <div class="legend-item"><span class="legend-swatch" style="background:#9effc9"></span><strong>LP</strong> — 10,000,000 (1%)</div>
-          <div class="legend-item"><span class="legend-swatch" style="background:#d9e1ec"></span><strong>Locked by PumpFun</strong> — 800,000,000 (80%)</div>
-        </div>
-      </div>
-
-      <p style="margin-top:16px;color:var(--muted)"><strong>Total Supply:</strong> 1,000,000,000 SLAPS</p>
-    </div>
-
-    <!-- short bullet summary on the right (or below on mobile) -->
-    <div style="display:flex;flex-direction:column;gap:12px">
-      <div style="background:#fbfbff;padding:14px;border-radius:12px;border:1px solid rgba(12,18,24,0.03)">
-        <strong>Tax:</strong> 0%
-      </div>
-      <div style="background:#fbfbff;padding:14px;border-radius:12px;border:1px solid rgba(12,18,24,0.03)">
-        <strong>Renounced:</strong> No
-      </div>
-      <div style="background:#fbfbff;padding:14px;border-radius:12px;border:1px solid rgba(12,18,24,0.03)">
-        <strong>LP Locked:</strong> TBD
+    <!-- CONTRACT CARD -->
+    <div class="contract-card">
+      <div class="contract-title">Solana Contract Address</div>
+      <div class="contract-inner">
+        <div id="addrBox" class="address-box">TBA — Contract launches soon</div>
+        <button id="copyBtn" class="copy-btn">
+          <span id="copyLabel">Copy</span>
+        </button>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- split area: buy+contract (left) and how-to (right on desktop) -->
-  <section class="split" aria-labelledby="buy-title">
-    <!-- left column: buy + contract -->
-    <div class="buy-wrap">
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <div style="display:flex;align-items:center;gap:12px;justify-content:space-between">
-          <h2 id="buy-title" style="margin:0;color:var(--accent)">Get Your Tokens</h2>
-        </div>
+  <!-- HOW TO BUY -->
+  <aside class="howto">
+    <h3>How to Buy</h3>
+    <ol>
+      <li>Install a Solana wallet (Phantom).</li>
+      <li>Buy SOL on an exchange and send to your wallet.</li>
+      <li>Open the purchase link and connect wallet.</li>
+      <li>Swap SOL → SLAPS.</li>
+    </ol>
+    <p style="margin-top:8px;color:var(--muted);">Need help? Join Discord.</p>
+  </aside>
+</section>
 
-        <p style="color:var(--muted);margin:0 0 8px">Ready to join the community? Purchase tokens through our official partners.</p>
+<!-- ROADMAP -->
+<section class="roadmap-card">
+  <h2 style="color:var(--accent);margin-top:0">Roadmap</h2>
+  <div class="timeline">
+    <div class="event"><h4>Phase 1 — Launch</h4><p>Website, socials, community ignition.</p></div>
+    <div class="event"><h4>Phase 2 — Community</h4><p>Meme campaigns, contests, outreach.</p></div>
+    <div class="event"><h4>Phase 3 — Ecosystem</h4><p>NFT + utility exploration.</p></div>
+    <div class="event"><h4>Phase 4 — Growth</h4><p>Exchange listings, partnerships.</p></div>
+  </div>
+</section>
 
-        <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
-          <a id="buyLink" class="cta" href="#" target="_blank" rel="noopener noreferrer">Official Purchase Link
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 3h7v7" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 14L21 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
+<!-- FAQ -->
+<section class="faq-card">
+  <h2 style="color:var(--accent);margin-top:0">FAQ</h2>
 
-      <!-- contract card -->
-      <div class="contract-card" style="margin-top:6px">
-        <div class="contract-title">Token Contract Address</div>
-        <div class="contract-inner">
-          <!-- Placeholder address — replace with real contract when available -->
-          <div id="addrBox" class="address-box">Contract: COMING SOON — will be posted here after launch</div>
-          <div>
-            <button id="copyBtn" class="copy-btn" aria-label="Copy contract address">
-              <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2" stroke="#091020" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="8" y="3" width="13" height="13" rx="2" stroke="#091020" stroke-width="1.4"/></svg>
-              <span id="copyLabel">Copy</span>
-            </button>
-          </div>
-        </div>
-        <div class="contract-note">Click the purchase link to visit the partner. Copy the address to paste into your wallet or swap. (800M locked by PumpFun at launch)</div>
-      </div>
-    </div>
+  <div class="faq-item">
+    <div class="faq-q">Where can I buy SLAPS? <span>+</span></div>
+    <div class="faq-a">Use the Official Purchase Link above.</div>
+  </div>
 
-    <!-- right column: how to buy -->
-    <aside class="howto" aria-labelledby="howto-title">
-      <h3 id="howto-title">How to Buy</h3>
-      <ol>
-        <li>Install a Solana wallet (e.g., Phantom).</li>
-        <li>Buy SOL on an exchange (Coinbase, Binance) and send to your wallet.</li>
-        <li>Open the purchase link and connect your wallet.</li>
-        <li>Swap SOL → SLAPS. Confirm transaction and add token to wallet if needed.</li>
-      </ol>
-      <p style="margin-top:8px;color:var(--muted)">If you need help, join our Discord and someone will walk you through it.</p>
-    </aside>
-  </section>
+  <div class="faq-item">
+    <div class="faq-q">Is there a tax on trading? <span>+</span></div>
+    <div class="faq-a">No.</div>
+  </div>
 
-  <!-- roadmap -->
-  <section class="roadmap-card" aria-labelledby="road-title">
-    <h2 id="road-title" style="color:var(--accent);margin-top:0">Roadmap</h2>
-    <div class="timeline" role="list">
-      <div class="event" role="listitem">
-        <h4>Phase 1 — Launch</h4>
-        <p>Token launch, website, community channels open, initial liquidity pool created.</p>
-      </div>
-      <div class="event">
-        <h4>Phase 2 — Community</h4>
-        <p>Meme contests, community farming, partnership outreach.</p>
-      </div>
-      <div class="event">
-        <h4>Phase 3 — Ecosystem</h4>
-        <p>Staking, NFT drops, cross-chain experiment planning.</p>
-      </div>
-      <div class="event">
-        <h4>Phase 4 — Growth</h4>
-        <p>Exchange listings, brand collaborations, more tooling for holders.</p>
-      </div>
-    </div>
-  </section>
+  <div class="faq-item">
+    <div class="faq-q">Where can I get help? <span>+</span></div>
+    <div class="faq-a">Join Discord or Twitter.</div>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section class="faq-card" aria-labelledby="faq-title">
-    <h2 id="faq-title" style="color:var(--accent);margin-top:0">FAQ</h2>
+<!-- GALLERY -->
+<section>
+  <h2 style="text-align:center;margin-bottom:12px;color:var(--accent)">Meme Gallery</h2>
+  <div class="gallery">
+    <img src="assets/gallery/1.jpg" alt="Meme 1">
+    <img src="assets/gallery/2.jpg" alt="Meme 2">
+    <img src="assets/gallery/3.jpg" alt="Meme 3">
+    <img src="assets/gallery/4.jpg" alt="Meme 4">
+  </div>
+</section>
 
-    <div class="faq-item">
-      <div class="faq-q" data-index="0">Where can I buy SLAPS? <span aria-hidden="true">+</span></div>
-      <div class="faq-a">Use the Official Purchase Link above. Connect a Solana wallet (Phantom) and swap SOL → SLAPS on the chosen partner.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" data-index="1">Is there a tax on transactions? <span aria-hidden="true">+</span></div>
-      <div class="faq-a">No tax by default — see Tokenomics for details. Always check the contract on Solscan before trading.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" data-index="2">Where can I get help? <span aria-hidden="true">+</span></div>
-      <div class="faq-a">Join our Discord or Twitter and our community helpers will assist you.</div>
-    </div>
-
-  </section>
-
-  <!-- gallery -->
-  <section>
-    <h2 style="text-align:center;margin-bottom:12px;color:var(--accent)">Meme Gallery</h2>
-    <div class="gallery" aria-hidden="false">
-      <img src="assets/gallery/1.jpg" alt="Meme 1" onerror="this.style.opacity=0.45">
-      <img src="assets/gallery/2.jpg" alt="Meme 2" onerror="this.style.opacity=0.45">
-      <img src="assets/gallery/3.jpg" alt="Meme 3" onerror="this.style.opacity=0.45">
-      <img src="assets/gallery/4.jpg" alt="Meme 4" onerror="this.style.opacity=0.45">
-    </div>
-  </section>
-
-  <footer>© <span id="year"></span> SLAPS</footer>
+<footer>© <span id="year"></span> SLAPS</footer>
 </main>
 
 <script>
@@ -314,18 +227,9 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // logo fallback
 (function(){
   const logo = document.getElementById('mainLogo');
-  logo.addEventListener('error', function onErr(){
-    if(!logo.dataset.triedAssets){
-      logo.dataset.triedAssets = '1';
-      logo.src = 'assets/Untitled_Artworkslaplogo.png';
-      console.warn('Logo not found at root, trying assets/Untitled_Artworkslaplogo.png');
-      return;
-    }
-    logo.removeEventListener('error', onErr);
-    logo.style.display = 'none';
-    console.error('Logo not found. Place Untitled_Artworkslaplogo.png at repo root or assets/');
+  logo.addEventListener('error', function(){
+    logo.src = 'assets/Untitled_Artworkslaplogo.png';
   });
-  logo.addEventListener('load', function(){ console.log('Logo loaded from:', logo.src); });
 })();
 
 // copy contract address
@@ -334,36 +238,24 @@ document.getElementById('year').textContent = new Date().getFullYear();
   const addrBox = document.getElementById('addrBox');
   const copyLabel = document.getElementById('copyLabel');
 
-  if(copyBtn){
-    copyBtn.addEventListener('click', async function(){
-      const text = addrBox.textContent.trim();
-      try {
-        await navigator.clipboard.writeText(text);
-        copyLabel.textContent = 'Copied';
-        copyBtn.style.background = '#f3f6ff';
-        setTimeout(()=>{ copyLabel.textContent = 'Copy'; copyBtn.style.background = ''; }, 2000);
-      } catch (e) {
-        const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select();
-        try { document.execCommand('copy'); copyLabel.textContent = 'Copied'; setTimeout(()=>{ copyLabel.textContent = 'Copy'; }, 2000); }
-        catch (err){ alert('Copy failed — select the address and press Ctrl+C'); }
-        finally { document.body.removeChild(ta); }
-      }
-    });
-  }
+  copyBtn.addEventListener('click', async function(){
+    try {
+      await navigator.clipboard.writeText(addrBox.textContent.trim());
+      copyLabel.textContent = 'Copied!';
+      setTimeout(()=> copyLabel.textContent='Copy', 2000);
+    } catch (err) {}
+  });
 })();
 
 // FAQ accordion
 (function(){
-  const items = document.querySelectorAll('.faq-item');
-  items.forEach((it, idx) => {
-    const q = it.querySelector('.faq-q');
-    const a = it.querySelector('.faq-a');
+  document.querySelectorAll('.faq-q').forEach(q => {
     q.addEventListener('click', () => {
-      const isOpen = a.style.display === 'block';
-      // close all
+      const a = q.nextElementSibling;
+      const open = a.style.display === 'block';
       document.querySelectorAll('.faq-a').forEach(n => n.style.display = 'none');
-      document.querySelectorAll('.faq-q span').forEach(s => s.textContent = '+');
-      if(!isOpen){
+      document.querySelectorAll('.faq-q span').forEach(n => n.textContent = '+');
+      if(!open){
         a.style.display = 'block';
         q.querySelector('span').textContent = '−';
       }
@@ -371,7 +263,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
   });
 })();
 </script>
+
 </body>
 </html>
-
-
